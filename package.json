@@ -7,8 +7,16 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon --watch src --exec node src/index.js",
+    "lint": "eslint . --ext .js",
+    "format": "prettier --write .",
     "test": "echo \"No tests yet\" && exit 0"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }

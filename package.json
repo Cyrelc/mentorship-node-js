@@ -2,21 +2,37 @@
   "name": "mentorship-node-js",
   "version": "0.1.0",
   "description": "Starter Node.js project for mentorship",
-  "main": "src/index.js",
-  "type": "module",
+  "main": "dist/main.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon --watch src --exec node src/index.js",
-    "lint": "eslint . --ext .js",
+    "start": "node dist/main.js",
+    "build": "tsc -p tsconfig.json",
+    "start:dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/main.ts",
+    "dev": "npm run start:dev",
+    "lint": "eslint . --ext .js,.ts",
     "format": "prettier --write .",
     "test": "echo \"No tests yet\" && exit 0"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "nodemon": "^3.1.11"
+    "@nestjs/cli": "^11.0.16",
+    "@types/node": "^25.2.0",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.5.5",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.8.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "@nestjs/common": "^11.1.12",
+    "@nestjs/core": "^11.1.12",
+    "@nestjs/platform-express": "^11.1.12",
+    "express": "^5.2.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
   }
 }
